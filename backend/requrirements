@@ -1,0 +1,4 @@
+Flask
+pymongo
+opencv-python
+python-dotenv
