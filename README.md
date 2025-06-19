@@ -10,23 +10,6 @@ This project is a full-stack application designed to play RTSP livestreams with 
 - Persistent overlay storage using MongoDB
 - User-friendly interface with a modern UI and smooth transitions
 
----
-
-## 📁 Project Structure
-
-├── backend/ # Flask API server and MediaMTX configuration
-│ ├── app.py # Main Flask application
-│ ├── overlay.py # Overlay API routes
-│ ├── db.py # MongoDB connection
-│ ├── mediamtx.yml # MediaMTX configuration
-│ └── requirements.txt
-├── frontend/ # React + Vite frontend
-│ ├── src/components/
-│ ├── src/pages/
-│ └── vite.config.js
-
-
-
 ## 🛠️ Installation and Setup
 
 ### Backend (Flask)
