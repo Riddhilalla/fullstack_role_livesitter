@@ -1,7 +1,7 @@
 logLevel: info
 
 hls: true
-hlsSegmentCount: 25
+hlsSegmentCount: 30
 hlsSegmentDuration: 4s
 hlsAlwaysRemux: yes
 
@@ -10,7 +10,5 @@ paths:
   mystream:
     source: publisher 
     runOnInit: >
-      "C:\\Users\\ADMIN\\Documents\\GitHub\\fullstack_role_livesitter\\backend\\bin\\ffmpeg.exe" -re -stream_loop -1 -fflags +genpts -i sample.mp4
-      -vcodec libx264 -acodec aac -pix_fmt yuv420p -preset ultrafast -tune zerolatency
-      -g 30 -keyint_min 30 -sc_threshold 0 -f rtsp rtsp://localhost:8554/mystream
+      "C:\\Users\\ADMIN\\Documents\\GitHub\\fullstack_role_livesitter\\backend\\bin\\ffmpeg.exe" -re -stream_loop -1 -fflags +genpts -i sample.mp4 -vcodec libx264 -acodec aac -pix_fmt yuv420p -preset ultrafast -tune zerolatency -g 30 -keyint_min 30 -sc_threshold 0 -f rtsp rtsp://localhost:8554/mystream
     runOnInitRestart: yes
