@@ -111,17 +111,18 @@ def start_stream():
         <br/><a href="/">← Back</a>
     ''', hls_url=hls_url)
 
-@app.route('/<path:segment_path>')
+@app.route('/mystream/<path:filename>')
 def hls_proxy(filename):
-    proxy_url =  f"http://localhost:8888/{segment_path}"
+    proxy_url = f"http://localhost:8888/mystream/{filename}"
     try:
         response = requests.get(proxy_url, stream=True, timeout=5)
-        return Response(stream_with_context(response.iter_content(chunk_size=1024)),
-                        content_type=response.headers['Content-Type'])
+        return Response(
+            stream_with_context(response.iter_content(chunk_size=1024)),
+            content_type=response.headers.get('Content-Type', 'application/vnd.apple.mpegurl')
+        )
     except Exception as e:
         print(f"Proxy error: {e}")
-        return "Error", 502
-
+        return "HLS content not available", 502
   
 
 #@app.route('/video_feed')

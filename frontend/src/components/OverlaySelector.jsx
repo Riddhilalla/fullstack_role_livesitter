@@ -7,7 +7,7 @@ export default function OverlaySelector({ onOverlayAdded }) {
   const [pos, setPos] = useState({x:50,y:50});
   const [size, setSize] = useState({w:200,h:100});
   const logos = [
-    { name: 'Streamer Logo', url: 'https://example.com/logo.png' },
+    { name: 'Streamer Logo', url: 'https://images.pexels.com/photos/7696446/pexels-photo-7696446.jpeg' },
     { name: 'Custom URL', url: 'custom' }
   ];
 
@@ -57,6 +57,9 @@ export default function OverlaySelector({ onOverlayAdded }) {
       />
 
       <div className="flex space-x-4">
+        <label className="text-gray-400 flex items-center px-2">
+          Position of X %
+        </label>
         <input
           type="number"
           value={pos.x}
@@ -64,6 +67,9 @@ export default function OverlaySelector({ onOverlayAdded }) {
           className="bg-gray-800 text-white px-3 py-2 w-20 rounded-xl"
           placeholder="X%"
         />
+        <label className="text-gray-400 flex items-center px-2">
+          Position of Y %
+        </label>
         <input
           type="number"
           value={pos.y}
@@ -91,7 +97,7 @@ export default function OverlaySelector({ onOverlayAdded }) {
         )}
       </div>
 
-      <button className="w-full py-3 bg-gradient-to-r from-green-500 to-pink-500 rounded-xl font-semibold hover:scale-105 transition">
+      <button className="w-full py-3 bg-gradient-to-r from-pink-500 to-pink-500 rounded-xl font-semibold hover:scale-105 transition">
         Add Overlay
       </button>
     </form>

@@ -22,7 +22,7 @@ export default function OverlayManager({ onUpdate }) {
 
   return (
     <div className="w-full max-w-4xl bg-black/60 backdrop-blur-lg rounded-2xl p-6 shadow-xl mt-6 space-y-4">
-      <h2 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-pink-400">
+      <h2 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-pink-400">
         🎨 Overlay Manager
       </h2>
 
@@ -35,24 +35,36 @@ export default function OverlayManager({ onUpdate }) {
                 className="w-full p-2 rounded-lg bg-gray-700 text-white"
               />
               <div className="flex space-x-2">
+                <label className="text-gray-400 flex items-center px-2">
+                  Position of X %
+                </label>
                 <input
                   type="number"
                   value={form.pos.x} onChange={e => setForm(f => ({...f, pos:{...f.pos, x:+e.target.value}}))}
                   className="p-2 rounded-lg bg-gray-700 text-white w-20"
                   placeholder="X%"
                 />
+                <label className="text-gray-400 flex items-center px-2">
+                  Position of Y %
+                </label>
                 <input
                   type="number"
                   value={form.pos.y} onChange={e => setForm(f => ({...f, pos:{...f.pos, y:+e.target.value}}))}
                   className="p-2 rounded-lg bg-gray-700 text-white w-20"
                   placeholder="Y%"
                 />
+                <label className="text-gray-400 flex items-center px-2">
+                  Width
+                </label>
                 <input
                   type="number"
                   value={form.size.w} onChange={e => setForm(f => ({...f, size:{...f.size, w:+e.target.value}}))}
                   className="p-2 rounded-lg bg-gray-700 text-white w-20"
                   placeholder="Wpx"
                 />
+                <label className="text-gray-400 flex items-center px-2">
+                  Height
+                </label>
                 <input
                   type="number"
                   value={form.size.h} onChange={e => setForm(f => ({...f, size:{...f.size, h:+e.target.value}}))}
@@ -112,3 +124,4 @@ export default function OverlayManager({ onUpdate }) {
     </div>
   );
 }
+// This component manages overlays, allowing users to edit and delete them.

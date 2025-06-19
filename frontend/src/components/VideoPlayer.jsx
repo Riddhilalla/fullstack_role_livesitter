@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import OverlayRenderer from './OverlayRenderer';
 import Hls from 'hls.js';
 import clsx from 'clsx';
 
@@ -47,8 +48,9 @@ export default function VideoPlayer({ src }) {
         className="w-full h-full object-cover"
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
+        
       />
-
+      <OverlayRenderer/>
       <div className={clsx(
         'absolute bottom-3 left-3 right-3 bg-black/40 backdrop-blur-md rounded-lg flex items-center p-2 gap-4 opacity-0 group-hover:opacity-100 transition-opacity'
       )}>
@@ -74,3 +76,4 @@ export default function VideoPlayer({ src }) {
     </div>
   );
 }
+// This component renders a video player with play/pause, volume control, and fullscreen toggle.

@@ -26,11 +26,11 @@ export default function OverlayRenderer() {
           style={{ zIndex: 10 }}
         >
           {o.type === 'text' ? (
-            <div className="text-white font-bold text-xl drop-shadow-lg">
+            <div className="text-white font-bold text-xl drop-shadow-lg m-3 p-3">
               {o.content}
             </div>
           ) : (
-            <img src={o.content} alt="overlay" className="w-full h-full object-contain" />
+            <img src={o.content} alt="overlay" className="w-full h-full object-contain m-3 p-3" />
           )}
         </Rnd>
       ))}
