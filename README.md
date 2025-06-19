@@ -25,11 +25,7 @@ This project is a full-stack application designed to play RTSP livestreams with 
 │ ├── src/pages/
 │ └── vite.config.js
 
-yaml
-Copy
-Edit
 
----
 
 ## 🛠️ Installation and Setup
 
